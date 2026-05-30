@@ -1,0 +1,1 @@
+ClimateSphere is a human-centric IoT platform designed to create personalized micro-climate zones within shared indoor environments such as offices, classrooms, libraries, co-working spaces, and smart homes.
