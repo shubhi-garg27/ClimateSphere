@@ -62,7 +62,7 @@ ClimateSphere detects occupancy and environmental conditions at each desk, incre
 * Smart Homes
 * Research Laboratories
 
-ClimateSphere demonstrates how modern IoT technologies can combine environmental sensing, wireless mesh networking, and intelligent automation to create more 
+ClimateSphere demonstrates how modern IoT technologies can combine environmental sensing, wireless mesh networking, and intelligent automation to create more comfortable and energy-efficient indoor spaces.
 
 # 2. Technical Architecture
 
@@ -389,31 +389,4 @@ ClimateSphere is released under the Apache License Version 2.0.
 
 ---
 
-# Expected Outcomes
-
-ClimateSphere demonstrates how modern IoT technologies can deliver personalized indoor comfort while improving energy efficiency through localized environmental control.
-
-## Deliverables
-
-* Thread Mesh Sensor Network
-* Matter-Based Device Control
-* Occupancy-Aware Environmental Automation
-* Personalized Comfort Zones
-* Edge-Based Environmental Analytics
-* Real-Time Monitoring Dashboard
-* Energy Consumption Optimization
-* Complete Silicon Labs Ecosystem Integration
-
-## Silicon Labs Technologies Demonstrated
-
-* EFR32MG24 Wireless SoCs
-* EFR32MG26 Wireless SoCs
-* OpenThread Networking
-* Matter Connectivity
-* Gecko SDK Development
-* Simplicity Studio Workflow
-* Edge Intelligence Deployment
-* Low-Power Wireless Design
-
-comfortable and energy-efficient indoor spaces.
 
