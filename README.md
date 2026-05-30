@@ -119,34 +119,5 @@ The entire room does not need to be cooled, reducing energy consumption.
 
 ---
 
-### Example ClimateSphere Operation
-
-```text
-09:00 AM
-
-Desk A Occupied
-Temperature = 28°C
-Light Level = 300 Lux
-
-↓
-
-Occupancy Detected
-
-↓
-
-Comfort Analysis Performed
-
-↓
-
-Fan Speed Increased
-
-↓
-
-Lighting Adjusted to 700 Lux
-
-↓
-
-Comfort Score = 95%
-```
 
 ClimateSphere transforms environmental sensing into intelligent comfort management, delivering a better user experience while reducing unnecessary energy consumption.
