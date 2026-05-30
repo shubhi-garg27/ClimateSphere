@@ -384,9 +384,8 @@ ClimateSphere is released under the Apache License Version 2.0.
 
 | Name          | Role                             | Contact Information                                     | GitHub Profile                          |
 | ------------- | -------------------------------- | ------------------------------------------------------- | --------------------------------------- |
-| Shubhi Garg   | Project Maintainer and Developer | [your-email@example.com](mailto:your-email@example.com) | https://github.com/your-github-username |
-| Team Member 2 | Embedded Systems Developer       | [member2@example.com](mailto:member2@example.com)       | https://github.com/member2              |
-| Team Member 3 | IoT Software Developer           | [member3@example.com](mailto:member3@example.com)       | https://github.com/member3              |
+| Shubhi Garg   | Project Maintainer and Developer | [gargshubhi464@gmail.com](mailto:your-gargshubhi464@gmail.com) | https://github.com/shubhi-garg27 |
+
 
 ---
 
