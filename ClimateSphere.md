@@ -62,5 +62,359 @@ ClimateSphere detects occupancy and environmental conditions at each desk, incre
 * Smart Homes
 * Research Laboratories
 
-ClimateSphere demonstrates how modern IoT technologies can combine environmental sensing, wireless mesh networking, and intelligent automation to create more comfortable and energy-efficient indoor spaces.
+ClimateSphere demonstrates how modern IoT technologies can combine environmental sensing, wireless mesh networking, and intelligent automation to create more 
+
+# 2. Technical Architecture
+
+## System Architecture
+
+```mermaid
+flowchart TD
+
+A[Temperature & Humidity Sensors]
+B[Ambient Light Sensors]
+C[Occupancy Sensors<br>PIR / mmWave]
+
+A --> D[Thread Sensor Node<br>EFR32MG24]
+B --> D
+C --> D
+
+D --> E[Thread Mesh Network]
+
+E --> F[ClimateSphere Edge Controller<br>EFR32MG26]
+
+F --> G[Comfort Analysis Engine]
+F --> H[Occupancy Analytics Engine]
+F --> I[Energy Optimization Engine]
+
+G --> J[Matter Controller]
+H --> J
+I --> J
+
+J --> K[Smart Fan]
+J --> L[Smart LED Lighting]
+J --> M[Smart Air Vent Servo]
+
+J --> N[Dashboard / Mobile Interface]
+
+O[Raspberry Pi 5<br>OpenThread Border Router]
+E --> O
+O --> J
+```
+
+---
+
+## Data Flow Architecture
+
+```mermaid
+sequenceDiagram
+
+participant SensorNode
+participant ThreadMesh
+participant EdgeController
+participant MatterController
+participant Actuator
+
+SensorNode->>ThreadMesh: Environmental Data
+ThreadMesh->>EdgeController: Sensor Readings
+EdgeController->>EdgeController: Comfort Analysis
+EdgeController->>MatterController: Control Decisions
+MatterController->>Actuator: Fan / Light / Vent Commands
+Actuator-->>MatterController: Status Updates
+```
+
+---
+
+## Thread Network Topology
+
+```mermaid
+graph LR
+
+BR[OpenThread Border Router]
+
+N1[EFR32MG24 Node 1]
+N2[EFR32MG24 Node 2]
+N3[EFR32MG24 Node 3]
+N4[EFR32MG24 Node 4]
+
+N1 --- N2
+N2 --- N3
+N3 --- N4
+N4 --- N1
+
+BR --- N2
+```
+
+---
+
+## Functional Workflow
+
+```mermaid
+flowchart LR
+
+A[Environmental Monitoring]
+--> B[Occupancy Detection]
+--> C[Data Collection]
+
+C --> D[Thread Mesh Communication]
+
+D --> E[Comfort Analysis]
+
+E --> F[Decision Engine]
+
+F --> G[Lighting Control]
+F --> H[Airflow Control]
+F --> I[Ventilation Control]
+
+G --> J[Personalized Comfort Zone]
+H --> J
+I --> J
+```
+
+---
+
+# 3. Technologies Used
+
+## Wireless Technologies
+
+* Thread 1.3
+* Matter 1.4
+* IEEE 802.15.4
+* IPv6 Networking
+* OpenThread
+* MQTT
+
+### Silicon Labs Technologies
+
+* Gecko SDK (GSDK)
+* Matter SDK
+* OpenThread Stack
+* Silicon Labs Machine Learning Libraries
+* CMSIS-NN
+
+### Edge Intelligence Technologies
+
+* TensorFlow Lite Micro
+* TinyML
+* Occupancy Analytics
+* Comfort Prediction Models
+* Edge Inference
+
+### Programming Languages
+
+* C
+* C++
+* Python
+* JavaScript
+* HTML
+* CSS
+
+### Development Tools
+
+* Simplicity Studio 6
+* Visual Studio Code
+* Git
+* GitHub
+* GitHub Actions
+* Node-RED
+* Wireshark
+* Silicon Labs Network Analyzer
+* Silicon Labs Energy Profiler
+
+---
+
+# 4. Hardware Components
+
+## Silicon Labs Hardware
+
+### Sensor Nodes
+
+| Component              | Quantity | Purpose             |
+| ---------------------- | -------- | ------------------- |
+| EFR32MG24 Explorer Kit | 3–5      | Thread Sensor Nodes |
+
+### Edge Controller
+
+| Component                 | Quantity | Purpose                                     |
+| ------------------------- | -------- | ------------------------------------------- |
+| EFR32MG26 Development Kit | 1        | Edge Controller and Environmental Analytics |
+
+### Wireless Communication
+
+| Component                      | Purpose                   |
+| ------------------------------ | ------------------------- |
+| Integrated IEEE 802.15.4 Radio | Thread Mesh Communication |
+
+---
+
+## Sensors
+
+### Environmental Sensors
+
+| Sensor   | Function                            |
+| -------- | ----------------------------------- |
+| SHT31    | Temperature and Humidity Monitoring |
+| Si7021   | Temperature and Humidity Monitoring |
+| VEML7700 | Ambient Light Monitoring            |
+
+### Occupancy Sensors
+
+| Sensor                   | Function                    |
+| ------------------------ | --------------------------- |
+| PIR Motion Sensor        | Basic Occupancy Detection   |
+| LD2410 mmWave Sensor     | Presence Detection          |
+| HLK-LD2450 mmWave Sensor | Advanced Occupancy Tracking |
+
+---
+
+## Actuators
+
+| Device            | Function                  |
+| ----------------- | ------------------------- |
+| Smart Fan         | Localized Airflow Control |
+| Smart LED Light   | Adaptive Lighting         |
+| SG90 Servo Motor  | Vent Direction Control    |
+| MG90S Servo Motor | Vent Direction Control    |
+
+---
+
+## External Hardware
+
+| Hardware                      | Purpose                                        |
+| ----------------------------- | ---------------------------------------------- |
+| Raspberry Pi 5                | OpenThread Border Router and Matter Controller |
+| Breadboard                    | Prototyping                                    |
+| Jumper Wires                  | Hardware Interconnections                      |
+| USB Power Supply              | Development Power                              |
+| 18650 Battery Pack (Optional) | Portable Deployment                            |
+| Battery Charger Module        | Battery Management                             |
+
+---
+
+## Development and Testing Equipment
+
+| Tool               | Purpose                 |
+| ------------------ | ----------------------- |
+| Logic Analyzer     | Communication Debugging |
+| Digital Multimeter | Electrical Measurements |
+| Oscilloscope       | Signal Analysis         |
+| USB Debug Adapter  | Firmware Programming    |
+
+---
+
+# 7. Software Components / Dependencies
+
+## Silicon Labs Dependencies
+
+| Component         | Version                          |
+| ----------------- | -------------------------------- |
+| Simplicity Studio | 6.x                              |
+| Gecko SDK (GSDK)  | v2025.6 or Latest Stable Release |
+| OpenThread SDK    | Included with GSDK               |
+| Matter SDK        | Included with GSDK               |
+| CMSIS-NN          | Latest Supported Version         |
+
+---
+
+## Silicon Labs Reference Applications
+
+| Example Application       | Purpose                    |
+| ------------------------- | -------------------------- |
+| Matter Lighting Example   | Matter Device Development  |
+| OpenThread CLI Example    | Thread Network Development |
+| Sensor Monitoring Example | Environmental Monitoring   |
+
+---
+
+## External Software Dependencies
+
+| Software              | Purpose                  |
+| --------------------- | ------------------------ |
+| TensorFlow Lite Micro | Edge Intelligence        |
+| Node-RED              | Dashboard Development    |
+| Mosquitto MQTT Broker | Messaging Infrastructure |
+| Python 3.x            | Data Processing          |
+| Git                   | Version Control          |
+| GitHub Actions        | CI/CD Automation         |
+| Docker (Optional)     | Containerized Deployment |
+
+---
+
+## Operating Systems
+
+| Platform                | Operating System          |
+| ----------------------- | ------------------------- |
+| Raspberry Pi 5          | Raspberry Pi OS           |
+| Development Workstation | Windows 11 / Ubuntu Linux |
+
+---
+
+# 8. Licensing
+
+## Project License
+
+**Apache License 2.0**
+
+ClimateSphere is released under the Apache License Version 2.0.
+
+### License Benefits
+
+* Commercial use permitted
+* Modification permitted
+* Distribution permitted
+* Private use permitted
+* Patent protection included
+
+---
+
+## Third-Party Licenses
+
+| Component             | License       |
+| --------------------- | ------------- |
+| OpenThread            | BSD-3-Clause  |
+| Matter SDK            | Apache 2.0    |
+| TensorFlow Lite Micro | Apache 2.0    |
+| Node-RED              | Apache 2.0    |
+| Mosquitto MQTT        | EPL 2.0 / EDL |
+| CMSIS-NN              | Apache 2.0    |
+
+---
+
+# 9. Maintainers / Contacts
+
+| Name          | Role                             | Contact Information                                     | GitHub Profile                          |
+| ------------- | -------------------------------- | ------------------------------------------------------- | --------------------------------------- |
+| Shubhi Garg   | Project Maintainer and Developer | [your-email@example.com](mailto:your-email@example.com) | https://github.com/your-github-username |
+| Team Member 2 | Embedded Systems Developer       | [member2@example.com](mailto:member2@example.com)       | https://github.com/member2              |
+| Team Member 3 | IoT Software Developer           | [member3@example.com](mailto:member3@example.com)       | https://github.com/member3              |
+
+---
+
+# Expected Outcomes
+
+ClimateSphere demonstrates how modern IoT technologies can deliver personalized indoor comfort while improving energy efficiency through localized environmental control.
+
+## Deliverables
+
+* Thread Mesh Sensor Network
+* Matter-Based Device Control
+* Occupancy-Aware Environmental Automation
+* Personalized Comfort Zones
+* Edge-Based Environmental Analytics
+* Real-Time Monitoring Dashboard
+* Energy Consumption Optimization
+* Complete Silicon Labs Ecosystem Integration
+
+## Silicon Labs Technologies Demonstrated
+
+* EFR32MG24 Wireless SoCs
+* EFR32MG26 Wireless SoCs
+* OpenThread Networking
+* Matter Connectivity
+* Gecko SDK Development
+* Simplicity Studio Workflow
+* Edge Intelligence Deployment
+* Low-Power Wireless Design
+
+comfortable and energy-efficient indoor spaces.
 
