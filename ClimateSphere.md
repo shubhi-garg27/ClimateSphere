@@ -182,22 +182,18 @@ I --> J
 * IEEE 802.15.4
 * IPv6 Networking
 * OpenThread
-* MQTT
 
 ### Silicon Labs Technologies
 
 * Gecko SDK (GSDK)
 * Matter SDK
 * OpenThread Stack
-* Silicon Labs Machine Learning Libraries
 * CMSIS-NN
 
 ### Edge Intelligence Technologies
 
 * TensorFlow Lite Micro
 * TinyML
-* Occupancy Analytics
-* Comfort Prediction Models
 * Edge Inference
 
 ### Programming Languages
@@ -206,8 +202,6 @@ I --> J
 * C++
 * Python
 * JavaScript
-* HTML
-* CSS
 
 ### Development Tools
 
@@ -215,9 +209,7 @@ I --> J
 * Visual Studio Code
 * Git
 * GitHub
-* GitHub Actions
 * Node-RED
-* Wireshark
 * Silicon Labs Network Analyzer
 * Silicon Labs Energy Profiler
 
@@ -253,7 +245,6 @@ I --> J
 
 | Sensor   | Function                            |
 | -------- | ----------------------------------- |
-| SHT31    | Temperature and Humidity Monitoring |
 | Si7021   | Temperature and Humidity Monitoring |
 | VEML7700 | Ambient Light Monitoring            |
 
@@ -263,7 +254,7 @@ I --> J
 | ------------------------ | --------------------------- |
 | PIR Motion Sensor        | Basic Occupancy Detection   |
 | LD2410 mmWave Sensor     | Presence Detection          |
-| HLK-LD2450 mmWave Sensor | Advanced Occupancy Tracking |
+
 
 ---
 
@@ -274,7 +265,6 @@ I --> J
 | Smart Fan         | Localized Airflow Control |
 | Smart LED Light   | Adaptive Lighting         |
 | SG90 Servo Motor  | Vent Direction Control    |
-| MG90S Servo Motor | Vent Direction Control    |
 
 ---
 
@@ -295,9 +285,7 @@ I --> J
 
 | Tool               | Purpose                 |
 | ------------------ | ----------------------- |
-| Logic Analyzer     | Communication Debugging |
 | Digital Multimeter | Electrical Measurements |
-| Oscilloscope       | Signal Analysis         |
 | USB Debug Adapter  | Firmware Programming    |
 
 ---
@@ -312,7 +300,7 @@ I --> J
 | Gecko SDK (GSDK)  | v2025.6 or Latest Stable Release |
 | OpenThread SDK    | Included with GSDK               |
 | Matter SDK        | Included with GSDK               |
-| CMSIS-NN          | Latest Supported Version         |
+
 
 ---
 
@@ -336,7 +324,7 @@ I --> J
 | Python 3.x            | Data Processing          |
 | Git                   | Version Control          |
 | GitHub Actions        | CI/CD Automation         |
-| Docker (Optional)     | Containerized Deployment |
+
 
 ---
 
@@ -356,15 +344,6 @@ I --> J
 **Apache License 2.0**
 
 ClimateSphere is released under the Apache License Version 2.0.
-
-### License Benefits
-
-* Commercial use permitted
-* Modification permitted
-* Distribution permitted
-* Private use permitted
-* Patent protection included
-
 ---
 
 ## Third-Party Licenses
