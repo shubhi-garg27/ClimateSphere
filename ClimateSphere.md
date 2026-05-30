@@ -362,9 +362,10 @@ ClimateSphere is released under the Apache License Version 2.0.
 
 # 9. Maintainers / Contacts
 
-| Name          | Role                             | Contact Information                                     | GitHub Profile                          |
-| ------------- | -------------------------------- | ------------------------------------------------------- | --------------------------------------- |
-| Shubhi Garg   | Project Maintainer and Developer | [gargshubhi464@gmail.com](mailto:your-gargshubhi464@gmail.com) | https://github.com/shubhi-garg27 |
+| Name        | Role                             | Contact Information                                                                                                                | GitHub Profile                   |
+| ----------- | -------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------- | -------------------------------- |
+| Shubhi Garg | Project Maintainer and Developer | [gargshubhi464@gmail.com](mailto:gargshubhi464@gmail.com)<br>[shubhi.garg_ec23@gla.ac.in](mailto:shubhi.garg_ec23@gla.ac.in) | https://github.com/shubhi-garg27 |
+
 
 
 ---
