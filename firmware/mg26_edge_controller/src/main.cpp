@@ -1,27 +1,37 @@
+#include <iostream>
+
+#include "climate_model.h"
 #include "comfort_engine.h"
 #include "matter_control.h"
 
 int main()
 {
-    float temp = 28.0;
+    climate_model_init();
 
-    float humidity = 60.0;
+    climate_input_t input;
 
-    int occupied = 1;
+    input.temperature = 28.0f;
+    input.humidity = 60.0f;
+    input.light_level = 250.0f;
+    input.occupied = 1;
 
-    comfort_output_t result;
+    climate_prediction_t prediction;
 
-    result =
-        evaluate_zone(
-            temp,
-            humidity,
-            occupied);
+    prediction =
+        predict_comfort(input);
 
-    set_fan_speed(result.fan_speed);
+    std::cout
+        << "Comfort Score: "
+        << prediction.comfort_score
+        << std::endl;
 
-    set_light_level(result.brightness);
+    set_fan_speed(
+        prediction.recommended_fan_speed);
 
-    set_vent_angle(result.vent_angle);
+    set_light_level(
+        prediction.recommended_brightness);
+
+    set_vent_angle(45);
 
     return 0;
 }
