@@ -1,37 +1,65 @@
 #include <iostream>
 
-#include "climate_model.h"
-#include "comfort_engine.h"
+#include "zone_manager.h"
 #include "matter_control.h"
 
 int main()
 {
-    climate_model_init();
+    zone_manager_init();
 
-    climate_input_t input;
+    climate_input_t deskA;
 
-    input.temperature = 28.0f;
-    input.humidity = 60.0f;
-    input.light_level = 250.0f;
-    input.occupied = 1;
+    deskA.temperature = 29.0f;
+    deskA.humidity = 60.0f;
+    deskA.light_level = 250.0f;
+    deskA.occupied = 1;
 
-    climate_prediction_t prediction;
+    climate_input_t deskB;
 
-    prediction =
-        predict_comfort(input);
+    deskB.temperature = 25.0f;
+    deskB.humidity = 55.0f;
+    deskB.light_level = 400.0f;
+    deskB.occupied = 1;
 
-    std::cout
-        << "Comfort Score: "
-        << prediction.comfort_score
-        << std::endl;
+    climate_input_t deskC;
 
-    set_fan_speed(
-        prediction.recommended_fan_speed);
+    deskC.temperature = 26.0f;
+    deskC.humidity = 50.0f;
+    deskC.light_level = 350.0f;
+    deskC.occupied = 0;
 
-    set_light_level(
-        prediction.recommended_brightness);
+    update_zone(0, deskA);
+    update_zone(1, deskB);
+    update_zone(2, deskC);
 
-    set_vent_angle(45);
+    evaluate_all_zones();
+
+    for(int i = 0; i < 3; i++)
+    {
+        zone_t zone = get_zone(i);
+
+        std::cout
+            << "Zone "
+            << i
+            << std::endl;
+
+        std::cout
+            << "Comfort Score: "
+            << zone.prediction.comfort_score
+            << std::endl;
+
+        set_fan_speed(
+            zone.prediction.recommended_fan_speed);
+
+        set_light_level(
+            zone.prediction.recommended_brightness);
+
+        set_vent_angle(45);
+
+        std::cout
+            << "-------------------"
+            << std::endl;
+    }
 
     return 0;
 }
