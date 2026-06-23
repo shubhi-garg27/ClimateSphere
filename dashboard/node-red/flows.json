@@ -1,1 +1,31 @@
-
+[
+  {
+    "id": "climatesphere_tab",
+    "type": "tab",
+    "label": "ClimateSphere"
+  },
+  {
+    "id": "zones_request",
+    "type": "inject",
+    "z": "climatesphere_tab",
+    "name": "Refresh Every 5 Seconds",
+    "repeat": "5",
+    "once": true,
+    "topic": ""
+  },
+  {
+    "id": "http_request",
+    "type": "http request",
+    "z": "climatesphere_tab",
+    "name": "Get Zones",
+    "method": "GET",
+    "ret": "obj",
+    "url": "http://localhost:5000/api/zones"
+  },
+  {
+    "id": "debug_output",
+    "type": "debug",
+    "z": "climatesphere_tab",
+    "name": "Zone Data"
+  }
+]
